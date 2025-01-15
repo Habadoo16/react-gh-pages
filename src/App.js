@@ -2,67 +2,43 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
+function Navbar({ activeLink, onSetActive }) {
+  const links = ["home", "about", "services", "contact"];
+  return (
+    <nav className="Navbar">
+      <ul className="Navbar-list">
+        {links.map((link) => (
+          <li
+            key={link}
+            className={`Navbar-item ${activeLink === link ? "active" : ""}`}
+          >
+            <a
+              href={`#${link}`}
+              onClick={(e) => {
+                e.preventDefault();
+                onSetActive(link);
+              }}
+              aria-current={activeLink === link ? "page" : undefined}
+            >
+              {link.charAt(0).toUpperCase() + link.slice(1)}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
 function App() {
   const [activeLink, setActiveLink] = useState("home");
-
-  const handleSetActive = (link) => {
-    setActiveLink(link);
-  };
 
   return (
     <div className="App">
       <header>
-        <nav className="Navbar">
-          <ul className="Navbar-list">
-            <li
-              className={`Navbar-item ${activeLink === "home" ? "active" : ""}`}
-            >
-              <a
-                href="#home"
-                onClick={() => handleSetActive("home")}
-              >
-                Home
-              </a>
-            </li>
-            <li
-              className={`Navbar-item ${activeLink === "about" ? "active" : ""}`}
-            >
-              <a
-                href="#about"
-                onClick={() => handleSetActive("about")}
-              >
-                About
-              </a>
-            </li>
-            <li
-              className={`Navbar-item ${
-                activeLink === "services" ? "active" : ""
-              }`}
-            >
-              <a
-                href="#services"
-                onClick={() => handleSetActive("services")}
-              >
-                Services
-              </a>
-            </li>
-            <li
-              className={`Navbar-item ${
-                activeLink === "contact" ? "active" : ""
-              }`}
-            >
-              <a
-                href="#contact"
-                onClick={() => handleSetActive("contact")}
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <Navbar activeLink={activeLink} onSetActive={setActiveLink} />
       </header>
       <main>
-        {activeLink === "home" && (
+        {activeLink === "home" ? (
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <p>
@@ -77,8 +53,7 @@ function App() {
               Learn React
             </a>
           </div>
-        )}
-        {activeLink !== "home" && (
+        ) : (
           <div className="Page-content">
             <h1>{activeLink.charAt(0).toUpperCase() + activeLink.slice(1)}</h1>
             <p>
