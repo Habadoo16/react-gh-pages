@@ -60,9 +60,19 @@
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
-  transition: color 0.3s;
+  transition: color 0.3s ease-in-out;
 }
 
 .Navbar-item a:hover {
   color: #61dafb;
+  cursor: pointer;
+}
+
+/* Active link styles */
+.Navbar-item.active a {
+  color: #61dafb;
+  font-weight: bold;
+  text-decoration: underline;
+  border-bottom: 2px solid #61dafb;
+  padding-bottom: 4px;
 }
