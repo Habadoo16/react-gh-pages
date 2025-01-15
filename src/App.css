@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+/* Navigation bar styles */
+.Navbar {
+  background-color: #20232a;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.Navbar-list {
+  list-style-type: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.Navbar-item a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.Navbar-item a:hover {
+  color: #61dafb;
+}
