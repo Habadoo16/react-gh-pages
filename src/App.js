@@ -1,12 +1,18 @@
 import React, { useState } from "react";
+import logo from "./logo.svg";
 import "./App.css";
 import Login from "./login/Login";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [activeLink, setActiveLink] = useState("home");
 
   const handleLogin = () => {
     setIsLoggedIn(true);
+  };
+
+  const handleSetActive = (link) => {
+    setActiveLink(link);
   };
 
   return (
@@ -14,54 +20,84 @@ function App() {
       {!isLoggedIn ? (
         <Login onLogin={handleLogin} />
       ) : (
-        <div className="Home">
-          <section className="Hero">
-            <h1>Welcome to Our Platform</h1>
-            <p>Your journey to success starts here.</p>
-            <button className="cta-button">Get Started</button>
-          </section>
-
-          <section className="Features">
-            <h2>Features</h2>
-            <div className="Feature-cards">
-              <div className="Feature-card">
-                <h3>Feature 1</h3>
-                <p>Discover what makes our platform unique.</p>
+        <>
+          <header>
+            <nav className="Navbar">
+              <ul className="Navbar-list">
+                <li
+                  className={`Navbar-item ${
+                    activeLink === "home" ? "active" : ""
+                  }`}
+                >
+                  <a href="#home" onClick={() => handleSetActive("home")}>
+                    Home
+                  </a>
+                </li>
+                <li
+                  className={`Navbar-item ${
+                    activeLink === "about" ? "active" : ""
+                  }`}
+                >
+                  <a href="#about" onClick={() => handleSetActive("about")}>
+                    About
+                  </a>
+                </li>
+                <li
+                  className={`Navbar-item ${
+                    activeLink === "services" ? "active" : ""
+                  }`}
+                >
+                  <a href="#services" onClick={() => handleSetActive("services")}>
+                    Services
+                  </a>
+                </li>
+                <li
+                  className={`Navbar-item ${
+                    activeLink === "contacts" ? "active" : ""
+                  }`}
+                >
+                  <a href="#contacts" onClick={() => handleSetActive("contacts")}>
+                    Contacts
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          <main>
+            {activeLink === "home" && (
+              <div className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <a
+                  className="App-link"
+                  href="https://reactjs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn React
+                </a>
               </div>
-              <div className="Feature-card">
-                <h3>Feature 2</h3>
-                <p>Experience seamless and intuitive design.</p>
+            )}
+            {activeLink === "about" && (
+              <div className="Content">
+                <h2>About Us</h2>
+                <p>We are a company dedicated to providing excellent services.</p>
               </div>
-              <div className="Feature-card">
-                <h3>Feature 3</h3>
-                <p>Join a community of like-minded individuals.</p>
+            )}
+            {activeLink === "services" && (
+              <div className="Content">
+                <h2>Our Services</h2>
+                <p>We offer a variety of services tailored to your needs.</p>
               </div>
-            </div>
-          </section>
-
-          <section className="Testimonials">
-            <h2>What Our Users Say</h2>
-            <div className="Testimonial-cards">
-              <div className="Testimonial-card">
-                <p>"This platform changed my life!"</p>
-                <h4>- Happy User</h4>
+            )}
+            {activeLink === "contacts" && (
+              <div className="Content">
+                <h2>Contact Us</h2>
+                <p>Email: contact@company.com</p>
+                <p>Phone: +1 234 567 890</p>
               </div>
-              <div className="Testimonial-card">
-                <p>"Easy to use and highly effective."</p>
-                <h4>- Satisfied Client</h4>
-              </div>
-            </div>
-          </section>
-
-          <footer className="Footer">
-            <p>&copy; 2025 Your Company. All rights reserved.</p>
-            <div className="Social-links">
-              <a href="#facebook">Facebook</a>
-              <a href="#twitter">Twitter</a>
-              <a href="#linkedin">LinkedIn</a>
-            </div>
-          </footer>
-        </div>
+            )}
+          </main>
+        </>
       )}
     </div>
   );
