@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import "./login.css";
-import logo from "../assets/logo.png"; // Replace with your actual logo image
+import logo from "../assets/logo.png"; // Ensure logo.png exists in the assets folder
 
 function Login({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Placeholder logic for email and password validation
-    onLogin();
+
+    // Simple validation logic for demonstration
+    if (email === "admin@example.com" && password === "password123") {
+      setError(""); // Clear any previous errors
+      onLogin();
+    } else {
+      setError("Invalid email or password. Please try again.");
+    }
   };
 
   return (
@@ -41,6 +48,7 @@ function Login({ onLogin }) {
               required
             />
           </div>
+          {error && <p className="error-message">{error}</p>}
           <button type="submit" className="btn-login">
             Login
           </button>
