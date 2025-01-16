@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
 import Login from "./login/Login";
-import welcomeImage from "./assets/welcome-image.jpg"; // Add your custom image here
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -17,7 +16,6 @@ function App() {
       ) : (
         <div className="Home">
           <section className="Hero">
-            <img src={welcomeImage} alt="Welcome" className="Welcome-image" />
             <h1>Welcome to Our Platform</h1>
             <p>Your journey to success starts here.</p>
             <button className="cta-button">Get Started</button>
