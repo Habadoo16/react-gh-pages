@@ -69,7 +69,13 @@ function App() {
           <main className="Content">
             {activeLink === "home" && (
               <div className="Home">
-                <img src={logo} className="Home-logo" alt="Welcome" />
+                <div className="Home-left">
+                  <img src={logo} alt="Welcome" className="Home-logo" />
+                </div>
+                <div className="Home-right">
+                  <h1>Welcome!</h1>
+                  <p>Enjoy exploring our application.</p>
+                </div>
               </div>
             )}
             {activeLink === "about" && (
