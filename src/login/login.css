@@ -47,7 +47,7 @@
 }
 
 .form-group input {
-  width: 100%;
+  width: 95%;
   padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -55,7 +55,7 @@
 }
 
 .btn-login {
-  width: 95%;
+  width: 80%;
   padding: 0.8rem;
   background-color: #3498db;
   color: white;
