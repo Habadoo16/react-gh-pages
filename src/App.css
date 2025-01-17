@@ -1,12 +1,19 @@
+/* General App Styles */
 .App {
   display: flex;
   height: 100vh;
   font-family: Arial, sans-serif;
 }
 
-/* Sidebar styles */
+/* Split Layout for Home */
+.SplitLayout {
+  display: flex;
+  width: 100%;
+}
+
+/* Sidebar Styles */
 .Sidebar {
-  width: 250px;
+  width: 300px;
   background-color: #20232a;
   color: white;
   display: flex;
@@ -38,55 +45,7 @@
   color: black;
 }
 
-/* Content area styles */
-.Content {
-  flex: 1;
-  padding: 2rem;
-  background-color: #f4f4f4;
-}
-
-/* Home Page styles */
-.Home {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.Home-left {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #e8e8ff;
-  border-radius: 10px;
-}
-
-.Home-logo {
-  max-width: 80%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.Home-right {
-  flex: 1;
-  text-align: left;
-}
-
-.Home-right h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-.Home-right p {
-  font-size: 1.2rem;
-  color: #555;
-}
-
-/* Logout button styles */
+/* Logout Button */
 .btn-logout {
   background-color: #e74c3c;
   color: white;
@@ -100,4 +59,35 @@
 
 .btn-logout:hover {
   background-color: #c0392b;
+}
+
+/* Content Area */
+.Content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+
+/* Home Page Styling */
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Home-logo {
+  max-width: 150px;
+  margin-bottom: 1rem;
+}
+
+.Home h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.Home p {
+  font-size: 1.2rem;
+  color: #555;
 }

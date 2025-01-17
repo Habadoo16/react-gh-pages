@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import logo from "./image.jpg"; // Replace with your home logo
 import "./App.css";
-import Login from "./login/login"; // Corrected path
+import logo from "./assets/logo.svg"; // Your logo
+import Login from "./login/Login";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -26,37 +26,33 @@ function App() {
       {!isLoggedIn ? (
         <Login onLogin={handleLogin} />
       ) : (
-        <div className="Layout">
+        <div className="SplitLayout">
           <aside className="Sidebar">
             <ul className="Sidebar-list">
               <li
-                className={`Sidebar-item ${
-                  activeLink === "home" ? "active" : ""
-                }`}
+                className={`Sidebar-item ${activeLink === "home" ? "active" : ""
+                  }`}
                 onClick={() => handleSetActive("home")}
               >
                 Home
               </li>
               <li
-                className={`Sidebar-item ${
-                  activeLink === "about" ? "active" : ""
-                }`}
+                className={`Sidebar-item ${activeLink === "about" ? "active" : ""
+                  }`}
                 onClick={() => handleSetActive("about")}
               >
                 About
               </li>
               <li
-                className={`Sidebar-item ${
-                  activeLink === "services" ? "active" : ""
-                }`}
+                className={`Sidebar-item ${activeLink === "services" ? "active" : ""
+                  }`}
                 onClick={() => handleSetActive("services")}
               >
                 Services
               </li>
               <li
-                className={`Sidebar-item ${
-                  activeLink === "contacts" ? "active" : ""
-                }`}
+                className={`Sidebar-item ${activeLink === "contacts" ? "active" : ""
+                  }`}
                 onClick={() => handleSetActive("contacts")}
               >
                 Contacts
@@ -69,13 +65,9 @@ function App() {
           <main className="Content">
             {activeLink === "home" && (
               <div className="Home">
-                <div className="Home-left">
-                  <img src={logo} alt="Welcome" className="Home-logo" />
-                </div>
-                <div className="Home-right">
-                  <h1>Welcome!</h1>
-                  <p>Enjoy exploring our application.</p>
-                </div>
+                <img src={logo} alt="Welcome" className="Home-logo" />
+                <h1>Welcome!</h1>
+                <p>Enjoy exploring our application.</p>
               </div>
             )}
             {activeLink === "about" && (
