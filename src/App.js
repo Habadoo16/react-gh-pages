@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "./image.jpg"; // Replace with your home logo
 import "./App.css";
-import Login from "./login/Login";
+import Login from "./login/login"; // Corrected path
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
