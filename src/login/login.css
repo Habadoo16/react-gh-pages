@@ -1,73 +1,132 @@
-.Login {
+.LoginPage {
+  display: flex;
+  height: 100vh;
+  background: #f9f9f9;
+}
+
+.LoginPage-left {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(to right, #f2f5fc, #e0e7f4);
-  color: #333;
-  font-family: Arial, sans-serif;
+  background-color: #e8e8ff;
 }
 
-.Login-container {
-  background: #fff;
+.Illustration {
+  max-width: 80%;
+  border-radius: 20px;
+}
+
+.LoginPage-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #ffffff, #f0f8ff);
+}
+
+.LoginForm {
+  width: 80%;
+  max-width: 400px;
   text-align: center;
-  width: 400px;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.Login-logo {
-  width: 100px;
+.LoginForm h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.LoginForm p {
   margin-bottom: 1rem;
-}
-
-.Login-container h1 {
-  margin: 0.5rem 0;
-  font-size: 1.8rem;
-  color: #2c3e50;
-}
-
-.Login-container p {
-  margin-bottom: 2rem;
-  color: #7f8c8d;
+  color: #777;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 0.5rem;
-  text-align: left; /* Align labels to the left */
+  margin-bottom: 1rem;
 }
 
 .form-group input {
-  width: 90%; /* Keep input centered */
-  margin: 0 auto; /* Center inputs */
-  display: block;
+  width: 100%;
   padding: 0.8rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1rem;
+}
+
+.RecoveryLink {
+  display: block;
+  text-align: right;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  text-decoration: none;
+}
+
+.RecoveryLink:hover {
+  color: #333;
 }
 
 .btn-login {
-  width: 85%;
+  width: 100%;
   padding: 0.8rem;
-  background-color: #3498db;
+  background-color: #ff4d4d;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 1rem;
+  transition: background-color 0.3s;
 }
 
 .btn-login:hover {
-  background-color: #2980b9;
+  background-color: #e63939;
+}
+
+.SocialText {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.SocialButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.SocialButton {
+  flex: 1;
+  padding: 0.8rem;
+  margin: 0 0.5rem;
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.SocialButton:hover {
+  background-color: #ddd;
+}
+
+.RegisterLink {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.RegisterLink a {
+  color: #ff4d4d;
+  text-decoration: none;
+}
+
+.RegisterLink a:hover {
+  text-decoration: underline;
 }
