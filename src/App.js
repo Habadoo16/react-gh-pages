@@ -1,15 +1,20 @@
 import React, { useState } from "react";
-import logo from "./image.jpg";
+import logo from "./image.jpg"; // Replace with your home logo
 import "./App.css";
 import Login from "./login/Login";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [activeLink, setActiveLink] = useState("login");
+  const [activeLink, setActiveLink] = useState("home");
 
   const handleLogin = () => {
     setIsLoggedIn(true);
     setActiveLink("home"); // Set default active link to "home" after login
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false); // Reset login state
+    setActiveLink("login"); // Redirect to login page
   };
 
   const handleSetActive = (link) => {
@@ -62,6 +67,9 @@ function App() {
                   </a>
                 </li>
               </ul>
+              <button className="btn-logout" onClick={handleLogout}>
+                Logout
+              </button>
             </nav>
           </header>
           <main>
