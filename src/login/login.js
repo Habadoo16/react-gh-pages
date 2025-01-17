@@ -1,60 +1,66 @@
 import React, { useState } from "react";
 import "./login.css";
-import logo from "../assets/logo.svg"; // Replace with your SVG logo
+import logo from "../assets/logo.svg"; // Your logo image
 
 function Login({ onLogin }) {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Placeholder logic for username and password validation
-    onLogin();
+
+    // Simple validation logic for demonstration
+    if (email === "admin@example.com" && password === "password123") {
+      setError(""); // Clear any previous errors
+      onLogin();
+    } else {
+      setError("Invalid email or password. Please try again.");
+    }
   };
 
   return (
-    <div className="LoginPage">
-      <div className="LoginPage-left">
-        <img src={logo} alt="Illustration" className="Illustration" />
-      </div>
-      <div className="LoginPage-right">
-        <form onSubmit={handleSubmit} className="LoginForm">
-          <h1>Hello Again!</h1>
-          <p>Welcome back! You've been missed!</p>
+    <div className="Login">
+      <div className="Login-container">
+        <img src={logo} alt="Logo" className="Login-logo" />
+        <h1>Hello Again!</h1>
+        <p>Welcome back! You've been missed!</p>
+        <form onSubmit={handleSubmit}>
           <div className="form-group">
+            <label htmlFor="email">Enter username</label>
             <input
-              type="text"
-              placeholder="Enter username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
           <div className="form-group">
+            <label htmlFor="password">Password</label>
             <input
               type="password"
-              placeholder="Password"
+              id="password"
+              name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
-          <a href="#forgot-password" className="RecoveryLink">
-            Recovery Password
-          </a>
+          {error && <p className="error-message">{error}</p>}
           <button type="submit" className="btn-login">
             Sign In
           </button>
-          <p className="SocialText">Or continue with</p>
-          <div className="SocialButtons">
-            <button className="SocialButton">Google</button>
-            <button className="SocialButton">Apple</button>
-            <button className="SocialButton">Facebook</button>
-          </div>
-          <p className="RegisterLink">
-            Not a member? <a href="#register">Register now</a>
-          </p>
+          <a href="#recovery" className="recovery-password">
+            Recovery Password
+          </a>
         </form>
+        <div className="social-buttons">
+          <button>Google</button>
+          <button>Apple</button>
+          <button>Facebook</button>
+        </div>
       </div>
     </div>
   );

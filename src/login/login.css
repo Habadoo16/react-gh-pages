@@ -1,132 +1,103 @@
-.LoginPage {
+.Login {
   display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  background: #f9f9f9;
-}
-
-.LoginPage-left {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #e8e8ff;
-}
-
-.Illustration {
-  max-width: 80%;
-  border-radius: 20px;
-}
-
-.LoginPage-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  background: linear-gradient(135deg, #ffffff, #f0f8ff);
-}
-
-.LoginForm {
-  width: 80%;
-  max-width: 400px;
-  text-align: center;
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.LoginForm h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  width: 100vw;
+  background: linear-gradient(to right, #f2f5fc, #e0e7f4);
   color: #333;
+  font-family: Arial, sans-serif;
 }
 
-.LoginForm p {
+.Login-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+}
+
+.Login-logo {
+  width: 100px;
   margin-bottom: 1rem;
-  color: #777;
+}
+
+.Login-container h1 {
+  margin: 0.5rem 0;
+  font-size: 1.8rem;
+  color: #2c3e50;
+}
+
+.Login-container p {
+  margin-bottom: 2rem;
+  color: #7f8c8d;
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
 }
 
 .form-group input {
   width: 100%;
   padding: 0.8rem;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 5px;
   font-size: 1rem;
-}
-
-.RecoveryLink {
-  display: block;
-  text-align: right;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  color: #555;
-  text-decoration: none;
-}
-
-.RecoveryLink:hover {
-  color: #333;
 }
 
 .btn-login {
   width: 100%;
   padding: 0.8rem;
-  background-color: #ff4d4d;
+  background-color: #3498db;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .btn-login:hover {
-  background-color: #e63939;
+  background-color: #2980b9;
 }
 
-.SocialText {
+.recovery-password {
+  display: block;
   margin: 1rem 0;
   font-size: 0.9rem;
-  color: #777;
-}
-
-.SocialButtons {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-
-.SocialButton {
-  flex: 1;
-  padding: 0.8rem;
-  margin: 0 0.5rem;
-  background-color: #f1f1f1;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.SocialButton:hover {
-  background-color: #ddd;
-}
-
-.RegisterLink {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-.RegisterLink a {
-  color: #ff4d4d;
+  color: #3498db;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.RegisterLink a:hover {
-  text-decoration: underline;
+.recovery-password:hover {
+  color: #2980b9;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.social-buttons button {
+  background: #f1f1f1;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.social-buttons button:hover {
+  background: #e0e0e0;
 }
