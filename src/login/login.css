@@ -35,7 +35,7 @@
 
 .form-group {
   margin-bottom: 1.5rem;
-  text-align: left;
+  text-align: center; /* Center aligns the text inside the labels */
 }
 
 .form-group label {
@@ -46,7 +46,9 @@
 }
 
 .form-group input {
-  width: 100%;
+  width: 90%; /* Reduced width for centering */
+  margin: 0 auto; /* Centers the input box horizontally */
+  display: block;
   padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -54,7 +56,7 @@
 }
 
 .btn-login {
-  width: 100%;
+  width: 90%;
   padding: 0.8rem;
   background-color: #3498db;
   color: white;
@@ -63,6 +65,7 @@
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 1rem;
 }
 
 .btn-login:hover {
