@@ -26,79 +26,73 @@ function App() {
       {!isLoggedIn ? (
         <Login onLogin={handleLogin} />
       ) : (
-        <>
-          <header>
-            <nav className="Navbar">
-              <ul className="Navbar-list">
-                <li
-                  className={`Navbar-item ${
-                    activeLink === "home" ? "active" : ""
-                  }`}
-                >
-                  <a href="#home" onClick={() => handleSetActive("home")}>
-                    Home
-                  </a>
-                </li>
-                <li
-                  className={`Navbar-item ${
-                    activeLink === "about" ? "active" : ""
-                  }`}
-                >
-                  <a href="#about" onClick={() => handleSetActive("about")}>
-                    About
-                  </a>
-                </li>
-                <li
-                  className={`Navbar-item ${
-                    activeLink === "services" ? "active" : ""
-                  }`}
-                >
-                  <a href="#services" onClick={() => handleSetActive("services")}>
-                    Services
-                  </a>
-                </li>
-                <li
-                  className={`Navbar-item ${
-                    activeLink === "contacts" ? "active" : ""
-                  }`}
-                >
-                  <a href="#contacts" onClick={() => handleSetActive("contacts")}>
-                    Contacts
-                  </a>
-                </li>
-              </ul>
-              <button className="btn-logout" onClick={handleLogout}>
-                Logout
-              </button>
-            </nav>
-          </header>
-          <main>
+        <div className="Layout">
+          <aside className="Sidebar">
+            <ul className="Sidebar-list">
+              <li
+                className={`Sidebar-item ${
+                  activeLink === "home" ? "active" : ""
+                }`}
+                onClick={() => handleSetActive("home")}
+              >
+                Home
+              </li>
+              <li
+                className={`Sidebar-item ${
+                  activeLink === "about" ? "active" : ""
+                }`}
+                onClick={() => handleSetActive("about")}
+              >
+                About
+              </li>
+              <li
+                className={`Sidebar-item ${
+                  activeLink === "services" ? "active" : ""
+                }`}
+                onClick={() => handleSetActive("services")}
+              >
+                Services
+              </li>
+              <li
+                className={`Sidebar-item ${
+                  activeLink === "contacts" ? "active" : ""
+                }`}
+                onClick={() => handleSetActive("contacts")}
+              >
+                Contacts
+              </li>
+            </ul>
+            <button className="btn-logout" onClick={handleLogout}>
+              Logout
+            </button>
+          </aside>
+          <main className="Content">
             {activeLink === "home" && (
-              <div className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
+              <div className="Home">
+                <img src={logo} className="Home-logo" alt="Welcome" />
               </div>
             )}
             {activeLink === "about" && (
-              <div className="Content">
+              <div className="About">
                 <h2>About Us</h2>
                 <p>We are a company dedicated to providing excellent services.</p>
               </div>
             )}
             {activeLink === "services" && (
-              <div className="Content">
+              <div className="Services">
                 <h2>Our Services</h2>
                 <p>We offer a variety of services tailored to your needs.</p>
               </div>
             )}
             {activeLink === "contacts" && (
-              <div className="Content">
+              <div className="Contacts">
                 <h2>Contact Us</h2>
                 <p>Email: contact@company.com</p>
                 <p>Phone: +1 234 567 890</p>
               </div>
             )}
           </main>
-        </>
+        </div>
       )}
     </div>
   );
