@@ -35,7 +35,6 @@
 
 .form-group {
   margin-bottom: 1.5rem;
-  text-align: center; /* Center aligns the text inside the labels */
 }
 
 .form-group label {
@@ -43,11 +42,12 @@
   font-size: 0.9rem;
   color: #555;
   margin-bottom: 0.5rem;
+  text-align: left; /* Align labels to the left */
 }
 
 .form-group input {
-  width: 90%; /* Reduced width for centering */
-  margin: 0 auto; /* Centers the input box horizontally */
+  width: 90%; /* Keep input centered */
+  margin: 0 auto; /* Center inputs */
   display: block;
   padding: 0.8rem;
   border: 1px solid #ccc;

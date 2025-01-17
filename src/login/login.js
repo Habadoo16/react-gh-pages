@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./login.css";
-import logo from "../assets/logo.png"; // Ensure logo.png exists in the assets folder
+import logo from "../assets/logo.svg"; // Ensure logo.svg exists in the assets folder
 
 function Login({ onLogin }) {
   const [email, setEmail] = useState("");
